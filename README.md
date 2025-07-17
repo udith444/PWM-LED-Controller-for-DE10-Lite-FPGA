@@ -24,9 +24,9 @@ Maximum clock frequency: XXX MHz
 
 ### Resource Utilization
 ![Logic Utilization](./output/logic_utilization.png)  
-- Total logic elements: XXX
-- Registers: XXX
-- Memory bits: XXX
+- Total logic elements: 4735
+- Registers: 3233
+- Memory bits: 270,176
 
 ## Hardware Setup
 ![DE10-Lite Implementation](./output/hardware_setup.jpg)  
@@ -47,15 +47,28 @@ Maximum clock frequency: XXX MHz
 1. Toggle switches `SW[0]`–`SW[2]` to adjust LED brightness
 2. Observe `LED[0]` brightness levels:
 
-| Switches (SW[2:0]) | Duty Cycle | Brightness |
-|--------------------|------------|------------|
-| 000                | 0%         | Off        |
-| 001                | 12.5%      | Low        |
-| ...                | ...        | ...        |
-| 111                | 100%       | Full       |
+| Switches (SW[2:0]) | Duty Cycle | Brightness Level |
+|--------------------|------------|------------------|
+| 000                | 0%         | Off              |
+| 001                | 12.5%      | Low              |
+| 010                | 25%        | Medium-Low       |
+| 011                | 37.5%      | Medium           |
+| 100                | 50%        | Medium-High      |
+| 101                | 62.5%      | High             |
+| 110                | 75%        | Very High        |
+| 111                | 100%       | Full             |
 
 ## Simulation
 To verify the design in ModelSim:
 1. Set `pwm_led_top.v` as the top-level entity
 2. Run `Tools → Run Simulation Tool → RTL Simulation`
 3. Force SW inputs in the waveform window to test PWM behavior
+
+## Acknowledgments
+This project was developed as part of the **FPGA Design for Embedded Systems** specialization capstone project offered by the **University of Colorado Boulder** on Coursera. Special thanks to:
+
+- Course instructors for their guidance on FPGA design methodologies
+- Terasic for providing the DE10-Lite development board documentation
+- Intel FPGA University Program for their educational resources
+
+The original project requirements and constraints were provided as part of the course curriculum, with implementation details and optimizations developed independently.
